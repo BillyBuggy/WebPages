@@ -1,0 +1,781 @@
+<!-- Exponential_OutlineMode.html -->
+
+<html lang="en" >
+<head>
+  <title> Overuse of "Growing Exponentially" </title>
+  <link rel="stylesheet" type="text/css"  href="./OutlineMode.css"     />
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+  <link                  type="text/html" href="./OutlineModeTex.html" />
+  </script>
+$$
+\newcommand{\myEqnLeftAlign}{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}
+\newcommand{ \myIndentThree}{\quad\quad\quad}
+\newcommand{   \myIndentTwo}{\quad\quad}
+\newcommand{   \myIndentOne}{\quad}
+$$
+</head>
+
+<body>
+<div style="margin: 50px;">
+  <font size="+3">
+  <h3> Overuse of "Growing Exponentially" </h3>
+
+
+  <div></div>    <!-- NEEDED! -->
+  <button class="collapsible">+</button>
+    Background: How quantities change
+  <div class="c1"><p>
+    <ul>
+      <li class="L-li"> By addition
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
+                                           (absolute)
+      <li class="L-li"> By multiplication  (relative)
+    </ul> <br>
+    <ul>
+      <li class="L-li"> <b>By addition</b> (absolute)
+        <ul>
+          10 + 2 = 12, &nbsp;&nbsp;
+          12 + 2 = 14, &nbsp;&nbsp;
+          14 + 2 = 16, &nbsp;&nbsp; etc.<br>
+          Last above: &nbsp;             10 &nbsp; + &nbsp; 2 + 2 + 2 = 16 <br>
+          Generally:  &nbsp;&nbsp;&nbsp; 10 &nbsp; + &nbsp; 3 x 2
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      = 16 <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp; 10 &nbsp; + &nbsp; k x 2          <br>
+          Using mathematical subscripts                  <p>
+
+          <!-- **************
+          $$
+            \begin{aligned} x_{k+1} &= x_{k} + 2           \myEqnLeftAlign \\\\
+                            x_{k+1} &= x_{0} + k \times 2  \myEqnLeftAlign \\\\
+            \end{aligned}
+          $$
+          \( \myIndentThree  x_{k+1} = x_{k} + 2           \)  <p>
+          \( \myIndentTwo    x_{k+1} = x_{0} + k \times 2  \)  <p>
+          \( \myIndentOne    x_{k+1} = x_{0} + k \times 1  \)
+          <li class="L-li"> <br>
+            When \(a \ne 0\), two solutions to &nbsp; \(ax^2 + bx + c = 0\)
+               ============== -->
+
+          \( \myIndentTwo    x_{k+1} = x_{k} + 2           \)  <p>
+          \( \myIndentTwo    x_{k+1} = x_{0} + k \times 2  \)  <p>
+        </ul>
+    </ul> <br>
+    <ul>
+      <li class="L-li"> <b>By multiplication</b> (relative)
+        <ul>
+          10   x 1.2 = 12,    &nbsp;&nbsp;
+          12   x 1.2 = 14.4,  &nbsp;&nbsp;
+          14.4 x 1.2 = 17.28, &nbsp;&nbsp; etc.<br>
+          Last above: &nbsp;             10  x 1.2 x 1.2 x 1.2 = 17.28    <br>
+          Generally:  &nbsp;&nbsp;&nbsp; 10  x \( {1.2}^3 \)
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                               = 17.28    <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp; 10  x \( {1.2}^k \)              <br>
+          Using mathematical subscripts               <p>
+          <!-- **************
+          $$
+            \begin{aligned} x_{k+1} &= x_{k} \times 1.2    \myEqnLeftAlign \\\\
+                            x_{k+1} &= x_{0} \times 1.2^k  \myEqnLeftAlign \\\\
+            \end{aligned}
+          $$
+               ============== -->
+          \( \myIndentTwo    x_{k+1} = x_{k} \times 1.2   \)  <p>
+          \( \myIndentTwo    x_{k+1} = x_{0} \times 1.2^k \)  <p>
+        </ul>
+    </ul> <br>
+  </div>
+
+
+  <div></div>    <!-- NEEDED! -->
+  <button class="collapsible">+</button>
+  Background: "Exponential Change"
+  <div class="c1"><p>
+    <ul>
+      <li class="L-li"> <p>
+        Relative change is called "Exponential Change"
+      <li class="L-li"> <p>
+    The \( 1.2^k \) &nbsp; in &nbsp; \( x_{k+1} = x_{0} \times 1.2^k \)
+    can be rewritten: <p>
+    \( \myIndentTwo                 y    = 1.2^k                       \)  <p>
+    \( \myIndentTwo              ln(y)   = ln(1.2^k)                   \)  <p>
+    \( \myIndentOne \mbox{Apply &nbsp;&nbsp;} ln(b^c) = c \times ln(b) \)  <p>
+    \( \myIndentTwo ln(y) = k \times ln(1.2)                           \)  <p>
+    \( \myIndentOne \mbox{Exponentiate both sides base&nbsp;&nbsp;} e  \)  <p>
+    \( \myIndentTwo e ^ {ln(y)} = e ^ {k \times ln(1.2)}               \)  <p>
+    \( \myIndentOne \mbox{Simplify using   } e ^ {ln(y)} = y           \)  <p>
+    \( \myIndentTwo y         = e ^ {k \times ln(1.2)}                 \)  <p>
+    \( \myIndentOne \mbox{Substitute back   } y = 1.2^k                \)  <p>
+    \( \myIndentTwo 1.2^k     = e ^ {k \times ln(1.2)}                 \)  <p>
+    </ul> <p>
+    <ul>
+      <li class="L-li"> <p>
+        Conclusion: Any change (e.g, the 1.2 or 20% growth above)
+          can be viewed as or called "<b>exponential change</b>".
+    </ul> <p>
+  </div>
+
+
+  <div></div>    <!-- NEEDED! -->
+  <button class="collapsible">+</button>
+  Absolute Change Examples
+  <div class="c1"><p>
+    <ul>
+      <li class="L-li"> <b> Height </b>
+      <li class="L-li"> OK:
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               "I grew by 1/2 inch"
+      <li class="L-li"> STRANGE:               "I grew by 10%"
+    </ul> <br> <ul>
+      <li class="L-li"> <b> Travel Distance </b>
+      <li class="L-li"> "Daddy, how far are we from grandma's house?"
+      <li class="L-li"> OK:
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               "Another 50 miles"
+      <li class="L-li"> STRANGE:               "Another 20%"
+      <li class="L-li"> STRANGE:               "We're 80% there"
+    </ul> <br> <ul>
+      <li class="L-li"> <b> Progress Bar </b>
+      <li class="L-li"> Number printed can be in percent
+      <li class="L-li"> But bar cannot grow logarithmically <p>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <img align="center" src="ProgressBar-Percent.jpg">
+    </ul>
+  </div> <p>
+
+
+  <div></div>    <!-- NEEDED! -->
+  <button class="collapsible">+</button>
+  Relative Change Has Many Facets
+  <div class="c1"><p>
+
+    <!---XXXXXXXXX <ul> <li class="L-li"> -->
+
+    <div></div>
+    <button class="collapsible">+</button>
+    Changes that <b id='cb'>literally</b> grow relatively
+    <div class="c1"><p>
+      <ul>
+        <li class="L-li"> <b>Examples</b>
+          <!-- *************
+          <ul>
+            <li class="L-li"> Virus spread
+            <li class="L-li"> Population growth
+            <li class="L-li"> Fission (number of particles)
+          </ul>
+          ************* -->
+        <li class="L-li"> 
+          Virus spread: Each person infected spreads to 3.5 others
+        <li class="L-li"> 
+          Population growth: Each person creates 1.25 kids
+        <li class="L-li"> 
+          Fission: Each uranium nucleus produces multiple neutrons
+        <p>
+        <li class="L-li"> OK:
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              Our population is growing annually by 1.5%
+        <li class="L-li"> Not OK: &nbsp;
+                              Our population is growing annually by 120,000
+      </ul>
+    </div> <p>
+
+    <!---XXXXXXXXX </ul> <ul> <li class="L-li"> -->
+
+    <div></div>
+    <button class="collapsible">+</button>
+    Changes that we <b id='cb'>perceive</b> relatively
+    <div class="c1"><p>
+        <ul>
+          <li class="L-li"> <b> Weber's law </b>
+          <li class="L-li"> "The minimum increase of stimulus which will
+                             produce a <br>
+                             &nbsp; perceptible increase of sensation
+                             is proportional to the <br>
+                             &nbsp; pre-existing stimulus."
+        </ul> <br> <ul>
+          <li class="L-li"> <b> Hearing differences in volume</b>
+          <li class="L-li"> <i>Can</i> &nbsp;&nbsp;&nbsp;&nbsp;
+                                  distinguish &nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp;
+                                  versus      &nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp;
+                                  pins dropping
+          <li class="L-li"> <i>Cannot</i> distinguish 1001
+                                          versus      1002 pins dropping
+        </ul> <br> <ul>
+          <li class="L-li"> <b> Hearing differences in frequency</b>
+          <li class="L-li"> <i>Can</i> &nbsp;&nbsp;&nbsp;&nbsp;
+                                      distinguish 100 &nbsp;&nbsp;&nbsp;
+                                           versus 103 &nbsp;&nbsp;&nbsp; Hz
+          <li class="L-li"> <i>Cannot</i> distinguish 10001 versus 10003 Hz
+        </ul>
+      <ul>
+    </div> <p>
+
+    <!---XXXXXXXXX </ul> <ul> <li class="L-li"> -->
+
+    <div></div>
+    <button class="collapsible">+</button>
+    Changes we <b id='cb'>choose</b> to grow relatively
+    <div class="c1"><p>
+      <ul>
+        <li class="L-li"> <b> Number of iterations to measure cpu time </b>
+        <li class="L-li"> Run &nbsp;&nbsp;&nbsp;&nbsp;   100 iterations,
+                                                             report time.
+        <li class="L-li"> Run &nbsp;&nbsp;              1000 iterations,
+                                                             report time.
+        <li class="L-li"> Run                         10,000 iterations,
+                                                             report time.
+      </ul>
+    </div> <p>
+
+    <!---XXXXXXXXX </ul> <ul> <li class="L-li"> -->
+
+    <div></div>
+    <button class="collapsible">+</button>
+    Changes we want to be <b id='cb'>reported</b> relatively
+    <div class="c1"><p>
+      <ul>
+        <li class="L-li"> Report relatively (in %) if growth mode
+                          actually <i>is</i> relative
+      </ul> <br> <ul>
+        <li class="L-li"> Report in % if range is over 2 orders of magnitude<br>
+                          eg: 1-100 or 1000-100,000 or 50-5000 <p>
+                          (If span > 2 or 3 orders of magnitude, <br>
+                           growth mode probably <i>is</i> relative. <br>
+                           <!-- *************
+                           In that case, a log-log plot might be appropriate)
+                           ************* -->
+      </ul> <br> <ul>
+        <li class="L-li"> <b> Stock price </b>
+        <li class="L-li"> OK:
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                 "It's up by 6 points (6%)"
+        <li class="L-li"> STRANGE:               "It's up by 2 dollars"
+      </ul> <br> <ul>
+        <li class="L-li"> Benefit of reporting relative change:      <br>
+                          <i>don't</i> have to know the actual value <br>
+                          e.g.: can judge a stock w/o knowing its actual price
+      </ul>
+    </div>
+  </div>
+
+
+  <div></div>    <!-- NEEDED! -->
+  <button class="collapsible">+</button>
+    Main Point and Conclusions
+  <div class="c1"><p>
+    <ul>
+      <li class="L-li">
+          People use "growing expontially" to instill fear of something <br>
+          "wildly out of control" due to plots like this: <p>
+      <img align="center" src="MathBits.com--ExponentialGrowth.jpg" width="50%">
+    </ul> <br> <ul>
+      <li class="L-li">
+          If you use a log-log plot you see that
+          exponential growth is routine: <p>
+         <!-- *************
+         <img align="center" src="ScienceDirect--Log-Log-Plot.jpg" >
+         ************* -->
+         <img align="center" src="Geol.lsu.edu--Semilog-Plot.jpg" width="50%">
+    </ul> <br> <ul>
+      <li class="L-li">
+          If the multiplicative (exponential) increase didn't <br>
+          bother you at <i>low</i> values,      <br>
+          it shouldn't at <i>high</i> values -- <br>
+          it's still the <i>same</i> multiplier!
+    </ul> <br> <ul>
+      <li class="L-li">
+          <b>Conclusions:</b>
+    </ul> <ul>
+      <li class="L-li">
+          Relative or exponential change is perfectly normal. <br>
+    </ul> <ul>
+      <li class="L-li">
+          Stop trying to instill fear with "it's growing exponentially"!
+    </ul>
+    <pre>
+
+
+
+
+
+
+
+    </pre>
+    <ul>
+      <li class="L-li">
+          <b>The End</b>
+    </ul>
+  </div>
+
+
+
+  <pre>
+  <p> <p> <p> <p> <p> <p> <p> <p>
+  ##########################################################
+  ##########################################################
+  ##########################################################
+  <br>
+  ***** Add compound interest? *****
+  </pre>
+    <ul>
+      <li class="L-li">
+        https://medium.com/@tomkob99_89317/why-exponentials-and-logarithms-dominate-statistics-and-information-theory-the-fundamental-abc3cbb71bb6 <br>
+        - Population growth (birth rate proportional to population) <br>
+        - Chemical reactions (reaction rate proportional to concentration) <br>
+        - Cooling processes (heat loss proportional to temperature diff) <br>
+        - Probability decay (hazard rate proportional to survival probab.) <br>
+    </ul> <br> <ul>
+      <li class="L-li">
+  Biology <br>
+          - Number of microorganisms in culture <br>
+          - virus spreads exponentially at first <br>
+          - Human population, number births per person per year
+            remain at current levels. Over last 100 years (1910 to 2010),
+            population of US exponentially increasing at avg rate of
+            1.5%/year. Double 50 years.
+    </ul> <br> <ul>
+      <li class="L-li">
+  Physics <br>
+          - Avalanche breakdown in dielectric material. <br>
+          - Nuclear chain reaction - Each uranium nucleus that undergoes <br>
+            fission produces multiple neutrons <br>
+    </ul> <br> <ul>
+      <li class="L-li">
+  Finance - Compound interest at a constant interest rate
+            grows exponentially <br>
+    </ul> <br> <ul>
+      <li class="L-li">
+  Computer - Processing power Moore's law.
+    </ul> <br> <ul>
+      <li class="L-li"> <b> How could any reaction/decay NOT be relative? </b>
+      <li class="L-li"> Say 100 oz of something disappears at 2 oz / hour
+      <li class="L-li"> Somewhere else you have 1 ton of the same. <br>
+                        It can't go down at only 2 oz / hour.      <br>
+                        It must go down at 2% of itself / hour
+      <li class="L-li"> This is a "relative change" in the item.
+    </ul> <br>
+    <ul>
+      <li class="L-li"> Difference between $0 and $100 feels greater than <br>
+                        between $500 and $600 or $5,500 and $5600,        <br>
+                        but still $100 difference.
+    </ul> <br>
+    <ul>
+      <li class="L-li">
+        If your view of the significance of a quantity that     <br>
+        changes by 10% is the same independent of the starting  <br>
+        value, then it is a "relative quantity" whose           <br>
+        exponential growth is just like linear growth for       <br>
+        an "absolute quantity".
+  </div>
+
+
+  <div></div>
+  <button class="collapsible">+</button>
+  Arithmetic vs Geometric Sequences
+  <div class="c1"><p>
+    &nbsp;
+  </div>
+
+
+  <button class="collapsible">+</button>
+  TEMPLATE
+  <div class="c1"><p>
+    <ul>
+      <li class="L-li"> LIST-a-1
+      <li class="L-li"> LIST-a-2
+    </ul> <br>
+    <ul>
+      <li class="L-li"> LIST-b-1 LINKED-IMAGE
+        &nbsp; &nbsp; &nbsp; &nbsp; <a href="RedBall.jpg"> 
+                                             RedBall.jpg </a>
+    </ul> <br>
+    <ul>
+      <li class="L-li"> LIST-c-1 INLINE-IMAGE
+        &nbsp; &nbsp; &nbsp; &nbsp;
+                    <img align="center" src="RedBall.jpg">
+    </ul>
+
+    <div></div>
+    <button class="collapsible">+</button>
+    LIST-d INNER
+    <div class="c1"><p>
+      <ul>
+        <li class="L-li"> LIST-d-1
+        <li class="L-li"> LIST-d-2
+        <li class="L-li"> LIST-d-3 INLINE-IMAGE
+          &nbsp; &nbsp; &nbsp; &nbsp;
+                      <img align="center" src="RedBall.jpg">
+      </ul>
+    </div>
+  </div>
+
+  </font>
+</div>
+<script src="./OutlineMode.js"></script>
+
+</body>
+</html>
+
+<!-- ****************
+###############################################################################
+###############################################################################
+###############################################################################
+        When \(a \ne 0\), there are
+        two solutions to &nbsp; \(ax^2 + bx + c = 0\) :
+
+    Factors that influence chemical reaction rate:
+      concentration of reactants, temperature, physical state of reactants
+      and their dispersion, the solvent, the presence of a catalyst.
+    .....                                           RE: MISUSE OF EXPONENTIAL @
+    Me: How could any reaction/decay NOT be first order?
+      - Say you have 1 oz of something that disappears   at      1/10 oz / hour
+      - Now you have 1 ton of the same. It can't go down at only 1/10 oz / hour
+      - It must go down at 10% of itself / hour:
+          dA/dt                     dA/dt             dA
+         ------- * 100 % = 10%     ------- = 0.1     ---- = 0.1 * A
+            A                        A                dt
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 12/12/2025 11:31
+  psychic numbing -- https://www.vox.com/explainers/2017/7/19/15925506/\\\
+                             psychic-numbing-paul-slovic-apathy
+                     The infuriating paradox that as the number of victims in a
+                     tragedy increases, our empathy, our willingness to help,
+                     reliably decreases.
+                     Same article: seems obvious that our    RELATIVE OBVIOUS @
+                     evaluation of change should be relative/logarithmic:
+                     ... prospect theory, has a value function which indicates
+                     how people value things as the amounts increased.
+                           RELATIVE / EXPONENTIAL GROWTH MISUSE PRESENTATION: @
+                     [Me: Good and Bad values] Changes at small levels had a
+                     big impact, and then as the magnitudes got larger, it took
+                     more and more of a difference to be noticeable.
+                     Difference between $0 and $100 feels greater than between
+                     $100 and $200 or $5,800 and $5,900, still $100 difference.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 12/12/2025 11:31
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    (Beginning of exp!!!)  RELATIVE / EXPONENTIAL GROWTH MISUSE PRESENTATION: @
+  945. I used to say that people misuse word  Me: RELATIVE EXPONENTIAL GROWTH @
+       "exponential" in describing a rising trend by them saying "it grows
+       exponentially".  I would say "do they actually think it is rising
+       faster than any polynomial?"
+       Now I realized that exp(x) is just like 1.05**n, i.e., "exponentially"
+       merely means linear growth on a log scale. This is similar to the idea
+       that if your view of the significance of a quantity that changes by 10%
+       is the same independent of the starting value, then it is a "relative"
+       quantity whose exponential growth is just like linear growth for
+       an "absolute" quantity.
+         03/15/2013 addition -- Exponential growth is just linear growth for
+                                a numeric value that you always value or
+                                compare in a relative sense.
+         03/30/2019 -- Two views:
+           ( Linear growth: new = old + constant ==== Xi = constant*i + X0 )
+           - Actual growth: new = old * constant ==== Xi = constant^i * X0
+           - How you value or compare old and new values (percentage wise). I
+             believe it is hard to find something *not* viewed percentage-wise
+             if a quantity grows more than 1 or 2 orders of magnitude.
+         10/14/2019                               MISUSE OF "EXPONENTIAL" LES @
+           Les looks at a linear plot of exponential growth and says people
+           don't understand the significant of EG.  I pointed out that if the
+           multiplier is 5%/year than each year is 5% greater than the last
+           year no matter how big it gets.  It the 5% meant little this year
+           it is going to be the same relative change in 50 years, and should
+           have the same effect on you (and on society/government).
+         11/02/2019 -- See GQ-2089: Daylight Savings Time created so
+                       "amount of daylight to work increased exponentially"
+         12/10/2019 -- See Benford's law: leading digit d in {1-9}) occurs with
+           probability  P(d) = log10(d+1) - log10(d) = log10(1 + 1/d)
+         02/07/2020 NYTimes
+           China is now importing medical face masks.  Our reporter visited a
+           mask factory in France where demand has risen exponentially.
+         04/03/2020 Just a cute name curiosity:
+           Exponential Audio, an iZOTOPE Company:
+           World-class reverbs for music and post production
+         04/11/2020
+           Gavin Newsom: We are delivering 3 low salt low sugar meals a day,
+             exponentially increasing our support for senior citizens.
+         05/21/2020 From GQ-2754 CauseACTION
+           >600 medical doctors wrote a letter to Trump to express alarm over
+           exponentially growing negative health consequences of nat. shutdown.
+         01/23/2021
+           A percent-completed progress bar, even though it spans 2 orders of
+           magnitude, should never move logarithmically.  Why?  Because the
+           time left at the end is just as painfull as at the beginning.
+           Other reasons?
+         04/12/2021 -- PulsarInstruments.com
+           Although human ear can distinguish the rise in level between one or
+           two pins dropping, it cannot distinguish between 10,000,000,000,000
+           pins and 10,000,000,000,001 pins or even 10,100,000,000,000 because
+           it is not a linear device. (Said level of jet engine = 10^12 pins)
+           Doubled sound = rise of 3dB:  If pin drop 10dB then two pins 13dB.
+           10,000,000,000,000 140dB and 20,000,000,000,000 143dB.
+             ==> See /PulsarInstruments/ for more.
+         11/29/2021 MorningBrew
+           Azeem Azhar book, "The Exponential Age: How Accelerating Technology
+             Is Transforming Business, Politics and Society" calls the gulf
+             between the rate of technological change and regulatory capacity
+             an "exponential gap"
+                 ^^^^^^^^^^^^^^^
+         07/03/2023 Github Polars
+           Testing Profiles for Python Polars (like Pandas)
+             fast:      runs    100 iterations.
+             balanced:  runs  1,000 iterations.
+             expensive: runs 10,000 iterations.
+         04/14/2024 -- Cura 3d print scaling (for $69 Easythreed 4"x4" printer)
+           - I download a huge Thingiverse part.
+           - I print it at 20% size
+           - I want to enlarge it.  I think 21% is "only" 1% larger, too small
+           - But it is 1% of the original size; it is 5% larger than this size!
+         08/16/2024        RELATIVE / EXPONENTIAL GROWTH MISUSE PRESENTATION: @
+           https://en.wikipedia.org/wiki/Weber-Fechner_law
+           Weber's law: "the minimum increase of stimulus which will produce a
+             perceptible increase of sensation is proportional to pre-existent
+             stimulus."
+           Fechner's law: from Weber's law: the intensity of our sensation incr
+             as log of incr in energy.       LOGARITHM (EXPONENTIAL) RELATIVE @
+           Other applications
+             Numerical cognition   SHOULD EXPENSIVES BE RELATIVE OR ABSOLUTE? @
+               Explains why consumers neglect to shop around to save a small
+               percentage on a large purchase, but will shop around to save a
+               large percentage on a small purchase -- even tho a much smaller
+               absolute dollar amount.[29]
+             Pharmacology
+               Hypothesized that dose-response logarithmic in dose.
+             Public finance
+               Increasing levels of public expenditures in mature democracies.
+             Emotion
+               Pleasant   emotions     logarithmic in pleasantness.
+               Unpleasant emotions not logarithmic in large unpleasantness.
+           -----------
+           Derivation of logarithmic from differential definition:
+             (From Fechner's law)
+               dy = k dS/S
+             Integrating:
+               y = k ln(S)  +  C⁡   where C is constant of integration
+             To solve for C assume y=0 at some S0:
+               0 = k ln(S0)  +  C
+               C =  -k ln(S0)
+               y = k ln(S)  -  k ln(S0)
+               y = k ln(S/S0)
+               Constant k is case-specific, must be determined.
+                 #######################
+                 ##  dy = k dS/S      ##
+                 ##  y  = k ln(S/S0)  ##
+                 #######################
+         09/19/2025 Quora                      AUSTRALIA LOWER MASS SHOOTINGS @
+           Why doesn't America stop school shootings with regulated gun laws
+           like Australia.
+           Australia is roughly same size as US geographically, but has a tenth
+           population. That means by sheer numbers you'd have far less school
+           or mass shooting events ...
+             ==> Should give a relative number of mass shootings to show
+                 that a law is effective.
+           Mass shooting events typ happen in gun free zones, eg schools. ...
+           Freedom comes with risks.
+           We'd rather be free on our feet than secure on bended knee.
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ==> How about your kids free but dead?
+         10/12/2025
+           Me: If you mostly view a number relatively, then
+               "exponentially increasing" is just linear.
+         10/16/2025         MISUSE "EXPONENTIAL GROWTH" CHATGPT PRESENTATION: @
+           ChatGPT:           ==> In general, see /PRESENTATION:_@/
+             "Create a bulleted presentation about how the term
+              'grows exponentially' is misued and how it relates to a geometric
+              series and viewing quantities in a relative logarithmic way."
+
+  # Google--MisuseGrowsExponentially.pdfc.txt
+  +++++++++++++++++++++++++++++++++++++++++++
+  "Create a bulleted presentation..."
+
+  Exponential growth is often mistakenly used as a synonym for
+  "rapid" or "fast" growth . However, it is a specific mathematical term
+  for a quantity that increases at a rate proportional to its current size.
+  Understanding this distinction is key to accurately interpreting and
+  describing phenomena like population growth, compounding interest,
+  and disease spread.
+
+  * The misuse of "grows exponentially "
+
+  A "big increase" is not necessarily exponential: When people say a
+  quantity has grown "exponentially," they often just mean it has increased
+  a lot. For example, claiming a company's profits grew "exponentially"
+  by millions of dollars in a single year could be a misuse of the term
+  if that was a one-time event, not a recurring proportional growth pattern.
+
+  * Constant rate of increase vs. multiplicative growth:
+
+  Linear growth adds fixed amount over time (eg, adding 10 units each day).
+  On a standard graph, this produces a straight line.
+
+  Exponential growth multiplies by a fixed factor over time (eg, doubling
+  each day). On a standard graph, this produces a curve that starts shallow
+  and gets progressively steeper.
+
+  The growth rate itself grows: In exponential growth, the growth rate
+  is not constant.
+    ==> Do they mean the amount added?  The growth rate *is* constant?
+    ==> NO! The growth rate is the slope, which *is* increasing
+
+  Instead, the rate of increase grows because it's based on an ever-larger
+  quantity.
+  Me: This adds nothing! :
+    Eg, if a population doubles every day, the number of new
+    individuals is small initially but explodes over time.
+
+  * The relationship to a geometric series
+
+  Discrete vs. continuous: A geometric series is a sequence of numbers
+  where each term after the first is found by multiplying the previous
+  one by a fixed, non-zero number called the common ratio r. [factor]
+
+  This represents discrete exponential growth , where the growth happens
+  at specific, fixed intervals (eg, the population doubles every 24 hours).
+
+  The formulaic connection: An exponential function is a generalization
+  of a geometric series to continuous time.
+
+  For a geometric series, the formula for the nth term is
+    x_n   = x_0 * r^n
+    x_n+1 = x_n * r    <-- Me: equivalent
+  where x_0 is the initial value and r is the common ratio.
+
+  For an exponential function (vs time), the formula is
+    x(t)   = x(0) * r^t
+  where x(0) is initial value and r is growth factor over time t.
+
+  The core concept is the same: repeated multiplication by a constant factor.
+
+  * Viewing quantities in a relative logarithmic way
+
+  Linear scale hides large changes: Standard linear graphs are
+    often insufficient for visualizing exponential growth. For a quantity
+    that goes from 10 to 10 million, a linear axis makes initial growth
+    look flat and insignificant, while end of curve is too steep to show
+    any detail.
+
+  Logarithmic scale reveals the pattern: It plots a quantity's logarithm
+  rather than its value. This has a profound effect on the visualization
+  of exponential growth:
+
+    Exponential growth becomes a straight line: When the y-axis is
+    logarithmic, indicating a constant multiplicative growth rate,
+    which is the definition of exponential growth.
+
+    Slope equals growth rate: The steepness of the straight line on a
+    semi-log plot is proportional to the exponential growth rate.
+
+  Interpreting semi-log plots:
+
+    Curve straightens: Plotting data on a logarithmic scale is an
+    excellent test for whether the growth is truly exponential.
+
+    Curving upward: A line that curves upward on semi-log plot means rate
+    of growth is itself increasing, indicating faster-than-exponential growth.
+
+  Curving downward: A line that flattens out means the rate of growth
+  is slowing down, as seen in models of limited growth like pandemics.
+
+  End: Google--MisuseGrowsExponentially.pdfc.txt
+                      END: RELATIVE / EXPONENTIAL GROWTH MISUSE PRESENTATION: @
+       exp!!!  exponential!!!   MORE USE/MISUSE OF "EXPONENTIAL" RE: RELATIVE @
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 12/12/2025 11:32
+ 1741. 21 Conservative Woman                           EX: EXPONENTIAL GROWTH @
+         Suicide rate among teen girls rising exponentially
+                                              ^^^^^^^^^^^^^
+         New study: suicide rates for young girls ages 10-14 rising faster
+         than boys. Social media likely contributor to spike FACEBOOK SUICIDE @
+         in suicide among teen girls. "Compared with boys, girls use social
+         media more frequently, are more likely to experience cyberbullying."
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 12/12/2025 11:33
+                           RELATIVE / EXPONENTIAL GROWTH MISUSE PRESENTATION: @
+C - Exponential Growth    W: (LOGARITHM) RELATIVE EXPONENTIAL GROWTH EXAMPLES @
+    ++++++++++++++++++ ==> See /pos!/ for pos feedback     GROW EXPONENTIALLY @
+  https://en.wikipedia.org/wiki/Exponential_growth
+    | Nye: People say something grows "exponentially" to get peoples attention.
+    |      But that doesn't mean it grows fast!
+  Biology
+    - Number of microorganisms in culture increase exponentially until an
+      essential nutrient is exhausted.
+    - A virus spreads exponentially at first, if no artificial immunization is
+      available. Each infected person can infect multiple new people.
+      (Nye: so the rate is not constant?)
+    - Human population, if the number of births/deaths per person per year
+      remain at current levels. Over last 100 years (1910 to 2010), population
+      of US exponentially increasing at avg rate of 1.5%/year. Double 50 years.
+  Physics
+    - Avalanche breakdown in dielectric material. A free electron accelerated
+      by externally applied electrical field: frees up more electrons as it
+      collides with atoms. Secondary electrons also accelerated, creating more
+      free electrons. Exponential growth of electrons/ions leads to complete
+      dielectric breakdown of the material.
+    - Nuclear chain reaction - Each uranium nucleus that undergoes fission
+      produces multiple neutrons, each of which absorbed by adjacent uranium
+      atoms, causing them to fission in turn. If probability of absorption
+      exceeds prob. of escape ...
+    - Positive feedback linear range amplifier: E.G. of amplified signal,
+      although resonance effects may favor some component frequencies.
+  Finance
+    - Compound interest at a constant interest rate provides EG of the capital.
+    - Pyramid or Ponzi schemes: high profits for a few initial investors and
+      losses among great numbers of investors.
+  Computer technology
+    - Processing power of computers. See also Moore's law.
+    - In computational complexity theory, algorithms of E.C. require E. incr
+      resources (eg time, computer memory) for constant incr in problem size.
+  Water lily (cute story)                              KIDS EXPONENTIAL STORY @
+    Imagine pond with water lily leaves floating on surface. Lily population
+    doubles in size every day and, if left unchecked, it will smother pond in
+    30 days. Decided to cut down all when cover half of pond. On what day will
+    half pond be covered? Solution: lilies must double to completely cover pond
+    on 30th day. Therefore, cover half pond on 29th day. There is only one day
+    to save pond.
+  Equitable Taxation (Nye-added)             EQUITABLE/FAIR PROGRESSIVE TAXES @
+    Paraphrased from  en.wikipedia.org/wiki/Equity_(economics)
+    Vertical equity -- The idea that people with a greater ability
+                       to pay taxes should pay more:
+    Proportional tax -- tax is a (fixed?)    proportion of income ("flat tax")
+    Progressive  tax -- tax is an increasing proportion of income (superlinear)
+                        Average tax rate < marginal tax rate.
+    Proportional tax is just "constant" if income changes are compared in a
+                     *relative* way or are considered to have *relative* value.
+                     (See /Me:_RELATIVE_EXPONENTIAL_GROWTH_@/)
+    FYI, Nye: Health Care  (Is this a contradiction?)
+      Horizontal equity -- providing equal health care to those who are the
+        same in a relevant respect (such as having the same 'need').
+      Vertical equity -- treating differently those who are different in
+        relevant respects (such as having different 'need'), (Culyer, 1995).
+    FYI, Equitability in fair division means every person's subjective
+         valuation of their own share of some goods is the same.
+         For more than two people, a division cannot always both be
+         equitable and envy-free.
+  08/29/2025
+    Exponential-relative topics     EXPONENTIAL GROWTH, GROWING EXPONENTIALLY @
+    - You can hardly find quantities not viewed in relative manner [exponential]
+      so that when they change they experience "exponential growth".
+    - Geometric series
+    - Additive vs multiplicative increase
+    - People use "growing exponentially" as if the growth was "wild", and
+      out of control.
+    - You can adjust y-axis scale and make any exponential growth look "wild"
+    - Exponential growth occurs when quantity grows as exponential func of time.
+       ==> No mention of EG's equivalence to geom series, multiplicative growth
+    - W: A quantity X depends exponentially on time t if
+      x(t) = x0 * m t / τ   -- t/τ is like "n": number of time constants
+      x_n  = x0 * m^n       --   x = m * x  geometric
+      B: A quantity X depends exponentially on index n if
+         x_n = x0 * m^n       --   xnext = m * xprev  geometric
+
+  End: Exponential Growth  /W: RELATIVE/
+
+**************** -->

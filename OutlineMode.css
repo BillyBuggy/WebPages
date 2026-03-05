@@ -1,0 +1,31 @@
+/*** File: OutlineMode.css ***/
+
+*    { margin: 0; padding: 0; border: 0; }
+body { background-color: #FFE8E8;
+       background-color: #ffffff;        }
+h1   { margin-bottom: 700;               }
+h2   { margin-bottom: 600;               }
+h4   { margin-bottom: 200;               }
+
+.XXX_note    { padding-left: 100px; font-size: 24px; }
+.note        { padding-left:  10px; font-size: 18px; }
+.collapsible {
+  width:             40px;
+  padding-left:      10px;    /* Box padding */
+  padding-right:     10px;
+  outline:           black ridge 1px;
+  font-size:         33px;
+}
+div div       { background-color: #E6FFE6; }
+div div li    { XXX_ground-color: #FFE8E8; }
+div div li    { background-color: #DAEFFF; }
+button        { margin-top: 10; }
+p             { margin-top: 30; }
+.c1           { margin-left:   74; display: none; line-height:36pt;
+                margin-bottom: 20;     }
+.tx           { text-indent: 20px;     }
+.L-li         { margin-left:   34;     }
+.L-ul         { XXX_er-color: #FFE8E8; }
+.L-ul         { border-color: #DAEFFF; }
+
+.XXX_MathJax, .XXX_mjx-container { font-size: 1.8em }
