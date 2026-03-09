@@ -1,0 +1,975 @@
+// Bill_ArduinoNotes_TEACH.HELP.txt                                     |
+//   1. No QuicKeys Deny click
+//   2. Set Font size 24 (then back to 10)
+//   3. From .tw:
+//        From: http://www.coderbunnyz.com  10/25/2017
+//          - Strategic Thinking
+//          - Problem Solving
+//          - Sequencing
+//          - Conditionals
+//          - Branches
+//          - Loops
+//          - Functions
+//          - Debugging
+//          - Inheritance
+//          - Parallelism
+//          - List
+//          - Stack
+//          - Queue
+//          - Algorithm Writing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Elementary Introductory Programming by
+
+    Playing Musical Notes on an Arduino
+
+                William Nye
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Background:
+  1. Arduino chip
+  2. Compare memory with phone
+  3. Metric units
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Metric Units
+
+  1                       one
+  1000                    thousand          :  kilo    1K
+  1,000,000               million           :  
+  1,000,000,000           billion           :  
+  1,000,000,000,000       trillion          :  
+
+  1                       one
+  1 / 1,000               one thousand'th   :  
+  1 / 1,000,000           one million'th    :  
+  1 / 1,000,000,000       one billion'th    :  
+  1 / 1,000,000,000,000   one trillion'th   :  
+
+
+        ***** Remove Answers *****
+
+
+
+
+
+
+
+
+  http://en.wikipedia.org/wiki/Metric_units
+
+  Prefix     kilo-  mega-  giga-  tera-  peta-
+  Suffix     k      M      G      T      P
+  Exponent   3      6      9      12     15
+
+  Prefix     milli- micro- nano-  pico-  femto-
+  Suffix     m      u      n      p      f
+  Exponent  -3     -6     -9     -12    -15
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  note( C );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Possible Notes:   C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B, _
+
+  note( C  );
+  note( Bb );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Notes and Octave.
+
+  note( C, 4 );
+  note( C, 5 );
+
+
+Musical "rest" (silence)
+
+  note( C, 4 );
+  note( _    );
+  note( C, 5 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Can specify different note durations:
+
+WN = Whole  Note    HN = Half    Note    QN = Quarter Note
+EN = Eighth Note    SN = 1/16'th Note    TN = 1/32'th Note
+
+  note( C, 4, EN );
+  note( C, 4, QN );
+  note( C, 4, HN );
+  note( C, 4, WN );
+
+  note( C, 4, EN );
+  note( _ );
+  note( C, 4, QN );
+  note( _ );
+  note( C, 4, HN );
+  note( _ );
+  note( C, 4, WN );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Looping -- Playing some statements more than one time.
+
+  repeat {
+    note( C );
+    note( A );
+    note( F );
+    note( G );
+  }
+
+  for (;;) {
+    note( C );
+    note( A );
+    note( F );
+    note( G );
+  }
+
+  for ( n=1 ; n<=3 ; n=n+1 ) {
+    note( C );
+    note( A );
+    note( F );
+    note( G );
+  }
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Statements can be on one line.
+
+  repeat {
+    note(C); note(A); note(F); note(G);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Write a little song.
+
+  repeat {
+    note(C); note(A); note(F); note(G);
+    note(C); note(A); note(F); note(G);
+    note(E); note(G); note(E); note(A);
+    note(C); note(D); note(F); note(G);
+  }
+
+  for ( n=1 ; n<=2 ; n=n+1 ) {
+    note(C); note(A); note(F); note(G);
+    note(C); note(A); note(F); note(G);
+    note(E); note(G); note(E); note(A);
+    note(C); note(D); note(F); note(G);
+  }
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+This is what we've had all along:
+
+  #include "ArduinoNotes.h"
+  void execute() {
+    repeat {
+      note(C); note(A); note(F); note(G);
+      note(C); note(A); note(F); note(G);
+      note(E); note(G); note(E); note(G);
+      note(C); note(A); note(F); note(G);
+    }
+  }
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Functions: Avoid repetition
+
+  void cfun () {
+    note(C); note(A); note(F); note(G);
+  }
+  void efun () {
+    note(E); note(G); note(E); note(G);
+  }
+  
+  void execute() {
+    repeat {
+      cfun();
+      cfun();
+      efun();
+      cfun();
+    }
+  }
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+All notes above were (by default) quarter notes and octave 4.
+
+The following two lines play exactly the same notes:
+
+  repeat {
+    note(C);      note(A);      note(F);      note(G);
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,QN);
+  }
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Can specify different note durations:
+
+   WN = Whole  Note    HN = Half    Note    QN = Quarter Note
+   EN = Eighth Note    SN = 1/16'th Note    TN = 1/32'th Note
+
+  repeat {
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,QN);
+
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN);
+                                              note(_,4,SN);
+                                              note(G,4,SN);
+                                              note(G,4,SN);
+
+    note(E,4,QN); note(G,4,QN); note(E,4,QN); note(G,4,QN);
+
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN);
+                                              note(_,4,SN);
+                                              note(G,4,SN);
+                                              note(G,4,SN);
+  }
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Variables: Avoid repetition, easy to change all.
+
+  int dur = QN;
+
+  note(C,4,QN);  note(A,4,QN);  note(F,4,QN);  note(G,4,QN);
+  note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur);
+
+
+
+  int dur = EN;
+  repeat {
+    note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur);
+  }
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Arrays and Loops.
+
+  int mya[] = { C, A, F, G };
+
+  repeat {
+    note(C     );  note(A     );  note(F     );  note(G     );
+    note(mya[0]);  note(mya[1]);  note(mya[2]);  note(mya[3]);
+  }
+
+Another way: using "loops"
+
+  int mya[] = { C, A, F, G };
+
+  repeat {
+    for( int k=0 ; k<4 ; ++k )
+      note( mya[k] );
+  }
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Previous song using arrays and loops:
+
+  Before: note(C); note(A); note(F); note(G);
+  Before: note(E); note(G); note(E); note(G);
+
+  int myC[] = { C, A, F, G };
+  int myE[] = { E, G, E, G };
+
+  repeat {
+    for( int k=0 ; k<4 ; ++k )
+      note( myC[k] );
+    for( int k=0 ; k<4 ; ++k )
+      note( myE[k] );
+  }
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If-Statements and Buttons:
+
+English:
+  If something is true then
+    do something.
+
+Programming
+  if ( something_is_true ) {
+    execute_some_statements
+  }
+
+  note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,QN);
+
+  if ( button1Pressed(1) ) {
+    note(C,5,QN); note(A,5,QN); note(F,5,QN); note(G,5,QN);
+  }
+  if ( button2Pressed(1) ) {
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN);
+                                              note(_,4,SN);
+                                              note(G,4,SN);
+                                              note(G,4,SN);
+  }
+
+
+
+
+
+
+
+
+  if ( lastPressedButton1 ) {
+    note(C,5,QN); note(A,5,QN); note(F,5,QN); note(G,5,QN);
+  }
+  if ( lastPressedButton2 ) {
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN);
+                                              note(_,4,SN);
+                                              note(G,4,SN);
+                                              note(G,4,SN);
+  }
+
+
+
+               ***** The End *****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Song: Adele - Hello
+
+C C Eb Eb F F G F  C D Eb D C Bb
+
+repeat {
+  note(C, 5,QN);  note(C,5,QN); note(Eb,5,QN);  note(Eb,5,QN);
+  note(F, 5,QSN); note(G,5,EN); note(F, 5,QTN);
+  note(C, 5,EN);  note(D,5,EN);
+  note(Eb,5,QN);  note(D,5,QN); note(C, 5,QN);  note(Bb,4,WN);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+int major[] = { 4, 0,QN, 4,QN, 7,QN, 4,QN }; // Define "chord"
+int minor[] = { 4, 0,QN, 3,QN, 7,QN, 3,QN }; // patterns.
+
+repeat {
+  if ( button1Pressed(1) ) {
+    chordmaker (C,3,WN,major); //C,Am,F,G (all WN whole notes)
+    chordmaker (A,3,WN,minor);
+    chordmaker (F,3,WN,major);
+    chordmaker (G,3,WN,major);
+  }
+  if ( button1Pressed(2) ) {
+    chordmaker (C,3,HN,major); //C,Am,F,G (all HN half notes)
+    chordmaker (A,3,HN,minor);
+    chordmaker (F,3,HN,major);
+    chordmaker (G,3,HN,major);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// For JavaScript
+// major = [ 4, 0,QN, 4,QN, 7,QN, 4,QN ]
+// minor = [ 4, 0,QN, 3,QN, 7,QN, 3,QN ]12
+// 
+//   if ( button1Pressed(1) ) {
+//     chordmaker (C,3,WN,major); //C,Am,F,G (all WN whole notes)
+//     chordmaker (A,3,WN,minor);
+//     chordmaker (F,3,WN,major);
+//     chordmaker (G,3,WN,major);
+//   }
+//   if ( button2Pressed(1) ) {
+//     chordmaker (C,3,HN,major); //C,Am,F,G (all HN half notes)
+//     chordmaker (A,3,HN,minor);
+//     chordmaker (F,3,HN,major);
+//     chordmaker (G,3,HN,major);
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Topics:
+  - Notes
+  - Adding octave
+  - Musical rest
+  - Looping
+  - Statements on one line.
+  - Functions
+  - Duration: WN, HN, QN, etc.
+  - Variables
+  - Arrays and Loops
+  - If-Statements and Buttons
+  - Chords (sort of)
+  + Settable global variables
+
+
+
+
+
+
+
+
+
+
+
+My Traditional Programming Concepts:
+  - Variables
+  - Arrays
+  - Loops
+  - Tests      (if-statement)
+  - Functions
+
+Files listed below:
++++++++++++++++++++
+  BillTestChordMaker.pde
+  BillSimpleChordMaker.pde
+  BillTeachProgViaSound.pde
+  BillDawnetteWholeNotes.pde
+  BillDawnetteWholeNotesStopButton.pde
+
+//   note( Db, 4, 100 );  // Note, octave, duration (ms)
+//   note( Db, 4, HN  );  // Note, octave, musical note duration:
+                          // WN, HN, QN, EN, SN, TN = Whole, Half, etc.
+                          // WHN 1.5, HQN 3/4, QEN 3/8, ESN 3/16, STN 3/32
+// Convenience:
+//   #define N note
+// API:
+//   button1Pressed(n)    ret ONCE a button   press of n times, then resets it.
+//   keypadPressed('X',n) ret ONCE keypad 'X' press of n times, then resets it.
+// Can set global variables:
+//   gOctave        = Octave being played                     (default 4)
+//   gNoteLen       = note length in millisec (ms)            (default 400ms)
+//   gNoteOnPercent = Percentage of gNoteLen that note plays  (default 90)
+//   gHaveKeypad    = 1                                       (default 0)
+
+void execute() {
+  repeat {
+    note(_,4,1);            // Make buttons work, sigh...
+    if ( button1Pressed(1) ) {
+      N(A,4,QN);  N(A,3,QN);  N(A,4,EN);  N(A,4,EN);  N(A,3,QN);
+      N(A,4,QN);  N(A,3,QN);  N(A,4,EN);  N(A,4,EN);  N(A,3,QN); }
+    if ( button2Pressed(1) ) {
+      N(D,5,QN);  N(D,4,QN);  N(D,5,EN);  N(D,5,EN);  N(D,4,QN);
+      N(D,5,QN);  N(D,4,QN);  N(D,5,EN);  N(D,5,EN);  N(D,4,QN); } } }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FILE: BillTestChordMaker.pde
+++++++++++++++++++++++++++++
+// BillTestChordMaker.pde
+
+#include "ArduinoNotes.h"
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void execute() {
+  gNoteLen       = -120;    // BPM
+  gNoteOnPercent =  95;     // 100% makes occasional funny sounds.
+  stopOnButtonPress(0,4);   // Set up button 0, 2 presses, to stop.
+
+  int majorNorm[] = { 4, 0,QN,             4,QN,       7,QN,       4,QN };
+  int majorDoub[] = { 8, 0,EN, 0,EN, 4,EN, 4,EN, 7,EN, 7,EN, 4,EN, 4,EN };
+  int majorPump[] = { 8, 0,EN, 3,EN, 4,EN, 0,EN, 7,EN, 0,EN, 4,EN, 5,EN };
+  int majorPIMP[] = { 7, 0,EN, 3,EN, 4,EN, 0,EN, 7,QN,       4,EN, 5,EN };
+
+  int minorNorm[] = { 4, 0,QN,             3,QN,       7,QN,       3,QN };
+  int minorDoub[] = { 8, 0,EN, 0,EN, 3,EN, 3,EN, 7,EN, 7,EN, 3,EN, 3,EN };
+  int minorPump[] = { 7, 0,EN, 2,EN, 3,EN, 0,EN, 7,EN, 0,EN, 3,EN, 5,EN };
+  int minorPIMP[] = { 7, 0,EN, 2,EN, 3,EN, 0,EN, 7,QN,       3,EN, 5,EN };
+
+  repeat {
+    note(C,3,10);
+    note(_,4,1300);  // Time for multiple button presses.
+
+    if ( button1Pressed(1) ) {
+      chordmaker (C,3,WN,majorNorm);       // C, Am, F, G (all WN whole notes)
+      chordmaker (A,3,WN,minorNorm);
+      chordmaker (F,3,WN,majorNorm);
+      chordmaker (G,3,WN,majorNorm);
+    }
+    if ( button1Pressed(2) ) {
+      chordmaker (C,3,WN,majorDoub);
+      chordmaker (A,3,WN,minorDoub);
+      chordmaker (F,3,WN,majorDoub);
+      chordmaker (G,3,WN,majorDoub);
+    }
+    if ( button1Pressed(3) ) {
+      chordmaker (C,3,WN,majorPump);
+      chordmaker (A,3,WN,minorPump);
+      chordmaker (F,3,WN,majorPump);
+      chordmaker (G,3,WN,majorPump);
+    }
+
+    if ( button2Pressed(1) ) {
+      chordmaker (C,3,HN,majorNorm);       // C, Am, F, G, (all HN half notes)
+      chordmaker (A,3,HN,minorNorm);
+      chordmaker (F,3,HN,majorNorm);
+      chordmaker (G,3,HN,majorNorm);
+    }
+    if ( button2Pressed(2) ) {
+      chordmaker (C,3,HN,majorDoub);
+      chordmaker (A,3,HN,minorDoub);
+      chordmaker (F,3,HN,majorDoub);
+      chordmaker (G,3,HN,majorDoub);
+    }
+    if ( button2Pressed(3) ) {
+      chordmaker (C,3,HN,majorPump);
+      chordmaker (A,3,HN,minorPIMP);
+      chordmaker (F,3,HN,majorPump);
+      chordmaker (G,3,HN,majorPIMP);
+    }
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FILE: BillSimpleChordMaker.pde
+++++++++++++++++++++++++++++++
+// BillSimpleChordMaker.pde
+
+#include "ArduinoNotes.h"
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void execute() {
+
+  int majorNorm[] = { 4, 0,QN,             4,QN,       7,QN,       4,QN };
+  int majorDoub[] = { 8, 0,EN, 0,EN, 4,EN, 4,EN, 7,EN, 7,EN, 4,EN, 4,EN };
+  int minorNorm[] = { 4, 0,QN,             3,QN,       7,QN,       3,QN };
+  int minorDoub[] = { 8, 0,EN, 0,EN, 3,EN, 3,EN, 7,EN, 7,EN, 3,EN, 3,EN };
+
+  repeat {
+    note(C,3,10);
+    note(_,4,1300);  // Time for multiple button presses.
+
+    if ( button1Pressed(1) ) {
+      chordmaker (C,3,WN,majorNorm);       // C, Am, F, G (all WN whole notes)
+      chordmaker (A,3,WN,minorNorm);
+      chordmaker (F,3,WN,majorNorm);
+      chordmaker (G,3,WN,majorNorm);
+    }
+    if ( button1Pressed(2) ) {
+      chordmaker (C,3,WN,majorDoub);
+      chordmaker (A,3,WN,minorDoub);
+      chordmaker (F,3,WN,majorDoub);
+      chordmaker (G,3,WN,majorDoub);
+    }
+
+    if ( button2Pressed(1) ) {
+      chordmaker (C,3,HN,majorNorm);       // C, Am, F, G, (all HN half notes)
+      chordmaker (A,3,HN,minorNorm);
+      chordmaker (F,3,HN,majorNorm);
+      chordmaker (G,3,HN,majorNorm);
+    }
+    if ( button2Pressed(2) ) {
+      chordmaker (C,3,HN,majorDoub);
+      chordmaker (A,3,HN,minorDoub);
+      chordmaker (F,3,HN,majorDoub);
+      chordmaker (G,3,HN,majorDoub);
+    }
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FILE: BillTeachProgViaSound.pde
++++++++++++++++++++++++++++++++
+// BillTeachProgViaSound.pde
+
+// Note: Press button FOUR times to turn off; ANY button turns back on.
+
+#include "ArduinoNotes.h"   // Note: global gOctave=4.
+
+int gPlaying = 1;
+
+void checkButtons () {
+  if ( button1Pressed(4) )  {                        gPlaying = 0; } // Silence
+  if ( button2Pressed(4) )  {                        gPlaying = 0; }
+  if ( button1Pressed(1) )  { gOctave  = 4;          gPlaying = 1; } // Pin A0
+  if ( button1Pressed(2) )  { gOctave  = 5;          gPlaying = 1; }
+  if ( button1Pressed(3) )  { gOctave  = 6;          gPlaying = 1; }
+  if ( button2Pressed(1) )  { gNoteLen = 400;        gPlaying = 1; } // Pin A1
+  if ( button2Pressed(2) )  { gNoteLen = gNoteLen/2; gPlaying = 1; } // Worked!
+  if ( button2Pressed(3) )  { gNoteLen = gNoteLen*2; gPlaying = 1; } // 11/2015
+}
+
+void execute() {
+  repeat {
+    int notesMost[] = { D, D, E, E, F, D, F, E };
+    int notesEnd[]  = { F, F, E, E, F, F, E, _ };
+    for ( int k=1 ; k<=3 ; k=k+1 ) {
+      if ( gPlaying == 1 )
+        for ( int n=0 ; n<8 ; n=n+1 )
+          note( notesMost[n] );
+      else
+        note( _ );   // Just to check for button presses.
+      checkButtons();
+    }
+    if ( gPlaying == 1 )
+      for ( int n=0 ; n<8 ; n=n+1 )
+        note( notesEnd[n] );
+    else
+      note( _ );   // Just to check for button presses.
+    checkButtons();
+  }
+}
+
+//OLD: if ( button1Pressed(1) )
+//OLD:   gOctave = 9 - gOctave;  // Alternate octaves 4 and 5
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FILE: BillDawnetteWholeNotes.pde
+++++++++++++++++++++++++++++++++
+// BillDawnetteWholeNotes.pde
+
+// Note: Press button FOUR times to turn off; ANY button turns back on.
+
+#include "ArduinoNotes.h"
+
+int gPlaying        = 1;   // Playing before any button pressed.
+int gMyOctaveOffset = 0;   // Added to octave arg in N()
+
+void checkButtons () {
+  if ( button1Pressed(4) )  {                        gPlaying = 0; } // Silence
+  if ( button2Pressed(4) )  {                        gPlaying = 0; }
+  if ( button1Pressed(1) )  { gMyOctaveOffset  =  0; gPlaying = 1; } // Pin A0
+  if ( button1Pressed(2) )  { gMyOctaveOffset  =  1; gPlaying = 1; }
+  if ( button1Pressed(3) )  { gMyOctaveOffset  = -1; gPlaying = 1; }
+  if ( button2Pressed(1) )  { gNoteLen = -120;       gPlaying = 1; } // Pin A1
+  if ( button2Pressed(2) )  { gNoteLen = -180;       gPlaying = 1; }
+  if ( button2Pressed(3) )  { gNoteLen =  -80;       gPlaying = 1; }
+}
+
+#define P checkButtonsPossiblePause
+void      checkButtonsPossiblePause () {
+  note(_,4,10);       // Buttons are checked internal to note() every 1 ms
+  checkButtons();
+  while ( gPlaying == 0 ) {
+    note(_,1,1);      // Silent note just to check for button presses.
+    checkButtons();
+  }
+}
+
+void N ( int noteNum, int octave,                 float noteLen ) {
+  note (     noteNum,     octave+gMyOctaveOffset,       noteLen );
+}
+
+void execute() {
+  if ( gNoteLen > 0 )        // Just set once.
+       gNoteLen  = -120;  // BPM
+  gNoteOnPercent =  98;   // 100% makes occasional funny sounds.
+
+  //D for ( int k=0 ; k<2 ; ++k ) {
+  //D   N(A,3,WHN);
+  //D   N(B,3,WN );
+  //D   N(C,4,HQN);
+  //D   N(D,4,HN );
+  //D   N(E,4,QEN);
+  //D   N(F,4,QN );
+  //D   N(G,4,ESN);
+  //D   N(A,4,EN );
+  //D   N(B,4,STN);
+  //D   N(C,5,SN );
+  //D   N(_,5,HN );
+  //D   //D N(B,4,STN);
+  //D   //D N(C,5,SN );
+  //D   //D N(_,5,HN );
+  //D   //D: I discovered the octave breakpoint is C, not A!  12/16/2015
+  //D }
+
+  repeat {
+    //--- note( Db, 4, 100 ); // Note, octave, duration (ms)
+    //--- note( Db, 4, HN );  // Note, octave, musical note duration:
+                              // WN, HN, QN, EN, SN, TN = Whole, Half, etc.
+                              // WHN 1.5, HQN 3/4, QEN 3/8, ESN 3/16, STN 3/32
+
+    N(A,3,QN);  N(A,3,QN);  N(F,3,ESN); N(C,4,SN);                         P();
+    N(A,3,QN);  N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         P();
+    N(E,4,QN);  N(E,4,QN);  N(E,4,QN);  N(F,4,ESN); N(C,4,SN);             P();
+    N(Ab,3,QN); N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         P();
+    N(A,4,QN);  N(A,3,ESN); N(A,3,SN);  N(A,4,QN); N(Ab,4,ESN); N(G,4,SN); P();
+
+    N(Gb,4,SN); N(E,4,SN);  N(F,4,EN);  N(_,3,EN); N(Bb,3,EN);  N(Eb,4,QN);
+                N(D,4,ESN); N(Db,4,SN); /*REST*/                           P();
+
+    N(C,4,SN);  N(B,3,SN);  N(C,4,EN);  N(_,3,EN); N(F,3,EN);   N(Ab,3,QN);
+                N(F,3,ESN); N(A,3,SN);  /*REST*/                           P();
+
+    N(C,4,QN);  N(A,3,ESN); N(C,4,SN);  N(E,4,HN);                         P();
+
+    N(A,4,QN);  N(A,3,ESN); N(A,3,SN);  N(A,4,QN); N(Ab,4,ESN); N(G,4,SN); P();
+
+    N(Gb,4,SN); N(E,4,SN);  N(F,4,EN);  N(_,3,EN); N(Bb,3,EN);  N(Eb,4,QN);
+                N(D,4,ESN); N(Db,4,SN); /*REST*/                           P();
+
+    N(C,4,SN);  N(B,3,SN);  N(C,4,EN);  N(_,3,EN); N(F,3,EN);   N(Ab,3,QN);
+                N(F,3,ESN); N(C,4,SN);  /*REST*/                           P();
+
+    N(A,3,QN);  N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         P();
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FILE: BillDawnetteWholeNotesStopButton.pde
+++++++++++++++++++++++++++++++++++++++++++
+// BillDawnetteWholeNotesStopButton.pde
+
+// Note: Press button 0 FOUR times to turn off; ANY button turns back on.
+
+#include "ArduinoNotes.h"
+
+int gMyOctaveOffset = 0;   // Added to octave arg in N()
+
+void B () {               // Check for button presses
+  if ( button1Pressed(1) )  { gMyOctaveOffset  =  0; }  // Pin A0
+  if ( button1Pressed(2) )  { gMyOctaveOffset  =  1; }
+  if ( button1Pressed(3) )  { gMyOctaveOffset  = -1; }
+  if ( button1Pressed(1) )  { gNoteLen = -120;       }  // Pin A1
+  if ( button1Pressed(2) )  { gNoteLen = -180;       }
+  if ( button1Pressed(3) )  { gNoteLen =  -80;       }
+}
+
+void N ( int noteNum, int octave,                 float noteLen ) {
+  note (     noteNum,     octave+gMyOctaveOffset,       noteLen );
+}
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void execute() {
+  gNoteLen       = -120;    // BPM
+  gNoteOnPercent =  98;     // 100% makes occasional funny sounds.
+  stopOnButtonPress(0,4);   // Set up button 0, 4 presses, to stop.
+//stopOnButtonPress(1,4);   // Set up button 1, 4 presses, to stop.
+
+  repeat {
+    //--- note( Db, 4, 100 ); // Note, octave, duration (ms)
+    //--- note( Db, 4, HN );  // Note, octave, musical note duration:
+                              // WN, HN, QN, EN, SN, TN = Whole, Half, etc.
+                              // WHN 1.5, HQN 3/4, QEN 3/8, ESN 3/16, STN 3/32
+
+    N(A,3,QN);  N(A,3,QN);  N(F,3,ESN); N(C,4,SN);                         B();
+    N(A,3,QN);  N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         B();
+    N(E,4,QN);  N(E,4,QN);  N(E,4,QN);  N(F,4,ESN); N(C,4,SN);             B();
+    N(Ab,3,QN); N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         B();
+    N(A,4,QN);  N(A,3,ESN); N(A,3,SN);  N(A,4,QN); N(Ab,4,ESN); N(G,4,SN); B();
+
+    N(Gb,4,SN); N(E,4,SN);  N(F,4,EN);  N(_,3,EN); N(Bb,3,EN);  N(Eb,4,QN);
+                N(D,4,ESN); N(Db,4,SN); /*REST*/                           B();
+
+    N(C,4,SN);  N(B,3,SN);  N(C,4,EN);  N(_,3,EN); N(F,3,EN);   N(Ab,3,QN);
+                N(F,3,ESN); N(A,3,SN);  /*REST*/                           B();
+
+    N(C,4,QN);  N(A,3,ESN); N(C,4,SN);  N(E,4,HN);                         B();
+
+    N(A,4,QN);  N(A,3,ESN); N(A,3,SN);  N(A,4,QN); N(Ab,4,ESN); N(G,4,SN); B();
+
+    N(Gb,4,SN); N(E,4,SN);  N(F,4,EN);  N(_,3,EN); N(Bb,3,EN);  N(Eb,4,QN);
+                N(D,4,ESN); N(Db,4,SN); /*REST*/                           B();
+
+    N(C,4,SN);  N(B,3,SN);  N(C,4,EN);  N(_,3,EN); N(F,3,EN);   N(Ab,3,QN);
+                N(F,3,ESN); N(C,4,SN);  /*REST*/                           B();
+
+    N(A,3,QN);  N(F,3,ESN); N(C,4,SN);  N(A,3,HN);                         B();
+  }
+}
