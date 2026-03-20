@@ -10,17 +10,18 @@
   </script>
   <link type="text/html" href="./OutlineModeTex.html" />
 $$
-\newcommand{\myEqnLeftAlign}{\normalize\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}
-\newcommand{ \myIndentThree}{\huge\quad\quad\quad}
-\newcommand{   \myIndentTwo}{\huge\quad\quad}
-\newcommand{   \myIndentOne}{\huge\quad}
+\newcommand{\myEqnLeftAlign}{\huge\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}
+\newcommand{ \myIndentC}{\huge\quad\quad\quad}
+\newcommand{ \myIndentB}{\huge\quad\quad}
+\newcommand{ \myIndentA}{\huge\quad}
+\newcommand{    \mySize}{\huge}
 $$
 </head>
 
 <body>
 <div style="margin: 50px;">
   <font size="+3">
-  <h3> Overuse of "Growing Exponentially (3)" </h3>
+  <h3> Overuse of "Growing Exponentially (4)" </h3>
 
 
   <div></div>    <!-- NEEDED! -->
@@ -55,15 +56,15 @@ $$
                             x_{k+1} &= x_{0} + k \times 2  \myEqnLeftAlign \\\\
             \end{aligned}
           $$
-          \( \myIndentThree  x_{k+1} = x_{k} + 2           \)  <p>
-          \( \myIndentTwo    x_{k+1} = x_{0} + k \times 2  \)  <p>
-          \( \myIndentOne    x_{k+1} = x_{0} + k \times 1  \)
+          \( \myIndentC  x_{k+1} = x_{k} + 2           \)  <p>
+          \( \myIndentB  x_{k+1} = x_{0} + k \times 2  \)  <p>
+          \( \myIndentA  x_{k+1} = x_{0} + k \times 1  \)
           <li class="L-li"> <br>
             When \(a \ne 0\), two solutions to &nbsp; \(ax^2 + bx + c = 0\)
                ============== -->
 
-          \( \myIndentTwo  x_{k+1} = x_{k} + 2           \)  <p>
-          \( \myIndentTwo  x_{k+1} = x_{0} + k \times 2  \)  <p>
+          \( \myIndentB  x_{k+1} = x_{k} + 2           \)  <p>
+          \( \myIndentB  x_{k+1} = x_{0} + k \times 2  \)  <p>
         </ul>
     </ul> <br>
     <ul>
@@ -88,8 +89,8 @@ $$
             \end{aligned}
           $$
                ============== -->
-          \( \myIndentTwo  x_{k+1} = x_{k} \times 1.2   \)  <p>
-          \( \myIndentTwo  x_{k+1} = x_{0} \times 1.2^k \)  <p>
+          \( \myIndentB  x_{k+1} = x_{k} \times 1.2   \)  <p>
+          \( \myIndentB  x_{k+1} = x_{0} \times 1.2^k \)  <p>
         </ul>
     </ul> <br>
   </div>
@@ -103,18 +104,19 @@ $$
       <li class="L-li"> <p>
         Relative change is called "Exponential Change"
       <li class="L-li"> <p>
-    The \( 1.2^k \) &nbsp; in &nbsp; \( x_{k+1} = x_{0} \times 1.2^k \)
+    The \( \mySize 1.2^k \) &nbsp; in &nbsp;
+        \( \mySize x_{k+1} = x_{0} \times 1.2^k \)
     can be rewritten: <p>
-    \( \myIndentTwo                 y    = 1.2^k                       \)  <p>
-    \( \myIndentTwo              ln(y)   = ln(1.2^k)                   \)  <p>
-    \( \myIndentOne \mbox{Apply &nbsp;&nbsp;} ln(b^c) = c \times ln(b) \)  <p>
-    \( \myIndentTwo ln(y) = k \times ln(1.2)                           \)  <p>
-    \( \myIndentOne \mbox{Exponentiate both sides base&nbsp;&nbsp;} e  \)  <p>
-    \( \myIndentTwo e ^ {ln(y)} = e ^ {k \times ln(1.2)}               \)  <p>
-    \( \myIndentOne \mbox{Simplify using   } e ^ {ln(y)} = y           \)  <p>
-    \( \myIndentTwo y         = e ^ {k \times ln(1.2)}                 \)  <p>
-    \( \myIndentOne \mbox{Substitute back   } y = 1.2^k                \)  <p>
-    \( \myIndentTwo 1.2^k     = e ^ {k \times ln(1.2)}                 \)  <p>
+    \( \myIndentC                 y    = 1.2^k                       \)  <p>
+    \( \myIndentC              ln(y)   = ln(1.2^k)                   \)  <p>
+    \( \myIndentA \mbox{Apply &nbsp;&nbsp;} ln(b^c) = c \times ln(b) \)  <p>
+    \( \myIndentC ln(y) = k \times ln(1.2)                           \)  <p>
+    \( \myIndentA \mbox{Exponentiate both sides base&nbsp;&nbsp;} e  \)  <p>
+    \( \myIndentC e ^ {ln(y)} = e ^ {k \times ln(1.2)}               \)  <p>
+    \( \myIndentA \mbox{Simplify using   } e ^ {ln(y)} = y           \)  <p>
+    \( \myIndentC y         = e ^ {k \times ln(1.2)}                 \)  <p>
+    \( \myIndentA \mbox{Substitute back   } y = 1.2^k                \)  <p>
+    \( \myIndentC 1.2^k     = e ^ {k \times ln(1.2)}                 \)  <p>
     </ul> <p>
     <ul>
       <li class="L-li"> <p>
