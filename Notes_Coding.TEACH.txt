@@ -1,0 +1,558 @@
+// Notes_Coding.TEACH.txt
+
+
+
+
+
+    Elementary Introductory Coding by
+
+    Playing Musical Notes in the Browser
+
+                William Nye
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  note( C )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Possible Notes:   Ab, A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+
+  note( C  )
+  note( Bb )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Notes and Octave.
+
+  note( C, 4 )
+  note( C, 5 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Musical "rest" (silence)
+
+  note( C, 4 )
+  note( _    )
+  note( C, 5 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Can specify different note durations:
+
+WN = Whole  Note    HN = Half    Note    QN = Quarter Note
+EN = Eighth Note    SN = 1/16'th Note    TN = 1/32'th Note
+
+  note( C, 4, WN )
+  note( C, 4, HN )
+  note( C, 4, EN )
+  note( C, 4, QN )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Looping -- Playing some statements more than one time.
+
+  for (;;) {                      // Forever
+    note( C )
+    note( A )
+    note( F )
+    note( G )
+  }
+
+  for ( n=1 ; n<=3 ; n=n+1 ) {    // 3 times
+    note( C )
+    note( A )
+    note( F )
+    note( G )
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Statements can be on one line.
+
+  note(C); note(A); note(F); note(G)
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Write a little song.
+
+  for ( n=1 ; n<=2 ; n=n+1 ) {
+    note(C); note(A); note(F); note(G)
+    note(C); note(A); note(F); note(G)
+    note(E); note(G); note(E); note(A)
+    note(C); note(D); note(F); note(G)
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Functions: Avoid repetition
+
+  void cfun () {
+    note(C); note(A); note(F); note(G)
+  }
+  void efun () {
+    note(E); note(G); note(E); note(G)
+  }
+  
+  cfun()
+  cfun()
+  efun()
+  cfun()
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+All notes above were (by default) quarter notes and octave 4.
+
+The following two lines play exactly the same notes:
+
+  note(C);      note(A);      note(F);      note(G)
+  note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,QN)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Can specify different note durations:
+
+   WN = Whole  Note    HN = Half    Note    QN = Quarter Note
+   EN = Eighth Note    SN = 1/16'th Note    TN = 1/32'th Note
+
+  note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,QN)
+
+  note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN)
+                                            note(_,4,SN)
+                                            note(G,4,SN)
+                                            note(G,4,SN)
+
+  note(E,4,QN); note(G,4,QN); note(E,4,QN); note(G,4,QN)
+
+  note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN)
+                                            note(_,4,SN)
+                                            note(G,4,SN)
+                                            note(G,4,SN)
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Variables: Avoid repetition, easy to change all.
+
+  dur = QN
+
+  note(C,4,QN);  note(A,4,QN);  note(F,4,QN);  note(G,4,QN)
+  note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur)
+
+
+
+  dur = EN
+  note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur)
+
+  dur = QN
+  note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur)
+
+  dur = HN
+  note(C,4,dur); note(A,4,dur); note(F,4,dur); note(G,4,dur)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Arrays and Loops.
+
+  mya = [ C, A, F, G ]
+
+  note(C     );  note(A     );  note(F     );  note(G     )
+  note(mya[0]);  note(mya[1]);  note(mya[2]);  note(mya[3])
+
+Another way: using "loops"
+
+  mya = [ C, A, F, G ]
+
+  for( k=0 ; k<4 ; ++k )
+    note( mya[k] )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Previous song using arrays and loops:
+
+  Before: note(C); note(A); note(F); note(G)
+          note(E); note(G); note(E); note(G)
+
+  myC = [ C, A, F, G ]
+  myE = [ E, G, E, G ]
+
+  for( k=0 ; k<4 ; ++k )
+    note( myC[k] )
+
+  for( k=0 ; k<4 ; ++k )
+    note( myE[k] )
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If-Statements and Buttons:
+
+English:
+  If something is true then
+    do something.
+
+Programming
+  if ( something_is_true ) {
+    execute_some_statements
+  }
+
+  note( B );
+  note( _ )
+
+  if ( button1Pressed(1) ) {
+    note(C,5,QN); note(A,5,QN); note(F,5,QN); note(G,5,QN)
+  }
+  if ( button2Pressed(1) ) {
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN)
+                                              note(_,4,SN)
+                                              note(G,4,SN)
+                                              note(G,4,SN)
+  }
+
+
+
+
+
+
+
+
+
+
+
+  note( B );
+  note( _ )
+
+  if ( lastPressedButton1 ) {
+    note(C,5,QN); note(A,5,QN); note(F,5,QN); note(G,5,QN)
+  }
+  if ( lastPressedButton2 ) {
+    note(C,4,QN); note(A,4,QN); note(F,4,QN); note(G,4,SN)
+                                              note(_,4,SN)
+                                              note(G,4,SN)
+                                              note(G,4,SN)
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Song: Adele - Hello
+
+C C Eb Eb F F G F  C D Eb D C Bb
+
+  note(C, 5,QN);  note(C,5,QN); note(Eb,5,QN);  note(Eb,5,QN)
+  note(F, 5,QSN); note(G,5,EN); note(F, 5,QTN)
+  note(C, 5,EN);  note(D,5,EN)
+  note(Eb,5,QN);  note(D,5,QN); note(C, 5,QN);  note(Bb,4,WN)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               ***** The End *****
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+major = [ 4, 0,QN, 4,QN, 7,QN, 4,QN ]  // Define "chord"
+minor = [ 4, 0,QN, 3,QN, 7,QN, 3,QN ]  // patterns.
+
+  if ( button1Pressed(1) ) {
+    chordmaker (C,3,WN,major);   // All WN whole notes
+    chordmaker (A,3,WN,minor)
+    chordmaker (F,3,WN,major)
+    chordmaker (G,3,WN,major)
+  }
+  if ( button1Pressed(2) ) {     // 10/06/2026 -- NEVER GET DOUBLE CLICK!
+    chordmaker (C,3,HN,major);   // All HN half notes
+    chordmaker (A,3,HN,minor)
+    chordmaker (F,3,HN,major)
+    chordmaker (G,3,HN,major)
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// For JavaScript
+// major = [ 4, 0,QN, 4,QN, 7,QN, 4,QN ]
+// minor = [ 4, 0,QN, 3,QN, 7,QN, 3,QN ]12
+// 
+//   if ( button1Pressed(1) ) {
+//     chordmaker (C,3,WN,major); //C,Am,F,G (all WN whole notes)
+//     chordmaker (A,3,WN,minor)
+//     chordmaker (F,3,WN,major)
+//     chordmaker (G,3,WN,major)
+//   }
+//   if ( button2Pressed(1) ) {
+//     chordmaker (C,3,HN,major); //C,Am,F,G (all HN half notes)
+//     chordmaker (A,3,HN,minor)
+//     chordmaker (F,3,HN,major)
+//     chordmaker (G,3,HN,major)
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Topics:
+  - Notes
+  - Adding octave
+  - Musical rest
+  - Looping
+  - Statements on one line.
+  - Functions
+  - Duration: WN, HN, QN, etc.
+  - Variables
+  - Arrays and Loops
+  - If-Statements and Buttons
+  - Chords (sort of)
+  + Settable global variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Traditional Programming Concepts:
+  - Variables
+  - Arrays
+  - Loops
+  - Tests      (if-statement)
+  - Functions
